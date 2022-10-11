@@ -16,9 +16,9 @@ import model.Team;
 */
 public class TeamHelper {
 
-	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("TeamList");
+	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("SportsMiniProject");
 	
-	public void insertItem(Team tm) {
+	public void insertTeam(Team tm) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(tm);
@@ -26,7 +26,7 @@ public class TeamHelper {
 		em.close();
 	}
 	
-	public void deleteItem(Team toDelete) {
+	public void deleteTeam(Team toDelete) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
 		TypedQuery<Team> typedQuery = em.createQuery("select t from Team t where t.name = :selectedName and t.numOfPlayers = :selectedNumOfPlayers", Team.class);
@@ -76,7 +76,7 @@ public class TeamHelper {
 		return foundPlayers;
 	}
 	
-	public Team searchForItemById(int idToEdit) {
+	public Team searchForTeamById(int idToEdit) {
 		// TODO Auto-generated method stub
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
@@ -85,7 +85,7 @@ public class TeamHelper {
 		return found;
 	}
 	
-	public void updateItem(Team toEdit) {
+	public void updateTeam(Team toEdit) {
 		// TODO Auto-generated method stub
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
@@ -98,9 +98,9 @@ public class TeamHelper {
 		emfactory.close();
 		}
 	
-	public List<Team> showAllItems(){
+	public List<Team> showAllTeams(){
 		EntityManager em = emfactory.createEntityManager();
-		List<Team> allItems = em.createQuery("SELECT i FROM Team i").getResultList();
-		return allItems;
+		List<Team> allTeams = em.createQuery("SELECT t FROM Team t").getResultList();
+		return allTeams;
 	}
 }

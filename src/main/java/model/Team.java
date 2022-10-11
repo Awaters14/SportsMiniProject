@@ -22,7 +22,7 @@ public class Team {
 	@Column(name="NAME")
 	private String name;
 	@Column(name="NUMOFPLAYERS")
-	private int numOfPlayers;
+	private String numOfPlayers;
 	/**
 	 * 
 	 */
@@ -34,7 +34,7 @@ public class Team {
 	 * @param name
 	 * @param numOfPlayers
 	 */
-	public Team(String name, int numOfPlayers) {
+	public Team(String name, String numOfPlayers) {
 		super();
 		this.name = name;
 		this.numOfPlayers = numOfPlayers;
@@ -66,13 +66,13 @@ public class Team {
 	/**
 	 * @return the numOfPlayers
 	 */
-	public int getNumOfPlayers() {
+	public String getNumOfPlayers() {
 		return numOfPlayers;
 	}
 	/**
 	 * @param numOfPlayers the numOfPlayers to set
 	 */
-	public void setNumOfPlayers(int numOfPlayers) {
+	public void setNumOfPlayers(String numOfPlayers) {
 		this.numOfPlayers = numOfPlayers;
 	}
 	
