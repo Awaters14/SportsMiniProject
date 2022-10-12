@@ -5,20 +5,22 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Sports Mini Project - Team List</title>
 </head>
 <body>
-<table>
-<c:forEach items = "${requestScope.allTeams}" var="currentTeams">
-	<tr>
-		<td><input type="radio"name="id"value="${currentTeams.id}"></td>
-		<td>${currentTeams.name}</td>
-		<td>${currentTeams.numOfPlayers}</td>
-		</tr>
-	</c:forEach>
-</table>
-<input type = "submit"value = "edit"name="doThisToItem">
-<input type = "submit"value = "delete"name="doThisToItem">
-<input type="submit"value = "add"name = "doThisToItem">
+	<form method="post" action="menuServlet">
+	<table>
+		<c:forEach items = "${requestScope.allTeams}" var="currentTeams">
+			<tr>
+				<td><input type="radio" name="team" value="${currentTeams.id}"></td>
+				<td>${currentTeams.name}</td>
+				<td>${currentTeams.numOfPlayers}</td>
+			</tr>
+		</c:forEach>
+	</table>
+	<input type="submit" value = "Edit" name="doThisToItem">
+	<input type="submit" value = "Delete" name="doThisToItem">
+	<input type="submit" value = "Add" name="doThisToItem">
+	</form>
 </body>
 </html>
