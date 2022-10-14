@@ -51,7 +51,7 @@ public class MenuServlet extends HttpServlet {
 			try {
 				Integer id = Integer.parseInt(request.getParameter("team"));
 				request.setAttribute("teamToEdit", help.searchForTeamById(id));
-				path = "/editTeam.jsp";
+				path = "/edit-team.jsp";
 			} catch (NullPointerException ex) {
 				request.setAttribute("result", "Error: " + ex.getMessage());
 			}

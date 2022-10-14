@@ -47,7 +47,7 @@ public class editTeamServlet extends HttpServlet {
 		teamToUpdate.setName(name);
 		th.updateTeam(teamToUpdate);
 		
-		getServletContext().getRequestDispatcher("/viewAllItemsServlet").forward(request, response);
+		getServletContext().getRequestDispatcher("/viewAllTeamsServlet").forward(request, response);
 	}
 
 }

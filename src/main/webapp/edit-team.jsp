@@ -9,8 +9,8 @@
 </head>
 <body>
 <form action= "editTeamServlet" method="post">
-Team: <input type ="text"name = "name"value= "${teamToEdit.store}">
-Number Of Players: <input type = "text"name = "numOfPlayers"value= "${teamToEdit.item}">
+Team: <input type ="text"name = "name"value= "${teamToEdit.name}">
+Number Of Players: <input type = "text"name = "numOfPlayers"value= "${teamToEdit.numOfPlayers}">
 <input type = "hidden"name = "id"value="${teamToEdit.id}">
 <input type = "submit"value="Save Edited Team">
 </form>

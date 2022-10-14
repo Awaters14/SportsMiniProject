@@ -15,7 +15,7 @@ import javax.persistence.TypedQuery;
 import model.Game;
 
 public class GameHelper {
-	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("Week6Colors");
+	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("SportsMiniProject");
 	
 	public void insertGame(Game game) {
 		EntityManager em = emfactory.createEntityManager();
