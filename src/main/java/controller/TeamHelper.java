@@ -7,6 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
+import model.Game;
 import model.Team;
 
 /**  
@@ -40,6 +41,14 @@ public class TeamHelper {
 		
 		//get the result and save it into a new Team
 		Team result = typedQuery.getSingleResult();
+		
+		//Delete Associated Games
+		TypedQuery<Game> gameQuery = em.createQuery("SELECT game FROM Game game WHERE game.home = :selectedTeam OR game.away = :selectedTeam", Game.class);
+		gameQuery.setParameter("selectedTeam", result);
+		
+		for (Game game : gameQuery.getResultList()) {
+			em.remove(game);
+		}
 		
 		//remove it
 		em.remove(result);

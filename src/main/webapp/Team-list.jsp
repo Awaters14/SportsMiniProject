@@ -22,5 +22,14 @@
 	<input type="submit" value = "Delete" name="doThisToItem">
 	<input type="submit" value = "Add" name="doThisToItem">
 	</form>
+	<form action="addGameServlet">
+		<input type="submit" value="Add a Game"> <br/>
+	</form>
+	<form action="viewAllTeamsServlet">
+		<input type="submit" value="View All Teams">
+	</form>
+	<form action="viewGamesServlet">
+		<input type="submit" value="View All Games"> <br/>
+	</form>
 </body>
 </html>
